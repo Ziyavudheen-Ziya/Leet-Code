@@ -1,5 +1,5 @@
 let numBottles = 9,
-  numExchange = 3;
+ numExchange = 3;
 let sum = numBottles;
 
 while (numBottles >= numExchange) {
