@@ -12,12 +12,10 @@ console.log(sum);
 
 for (i = 0; i < arr.length; i++) {
   if (/[0-9]/.test(arr[i])) {
-    arr1.push(arr[i]);
+    sum2 += parseFloat(arr[i]);
   }
 }
 
-for (i = 0; i < arr1.length; i++) {
-  sum2 += parseFloat(arr1[i]);
-}
-
 console.log(sum2);
+
+console.log(sum - sum2);
