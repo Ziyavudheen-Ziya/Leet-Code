@@ -1,5 +1,5 @@
-let num = 240
-let  k = 2;
+let num = 240;
+let k = 2;
 
 let arr = num.toString();
 let c = 0;
