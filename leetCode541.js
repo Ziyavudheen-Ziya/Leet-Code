@@ -1,19 +1,20 @@
 let s = "abcdefg".split("");
+let k =2
+let result = []
 
-let k = 2;
-let str = [];
-let arr = [];
+while(s.length>0){
 
-let i = 0;
+  let reversePart = s.splice(0,k).reverse().join('')
 
-for (let i = 0; i < s.length; i++) {
-  if (i < k) {
-    str.push(s[i]);
-  } else {
-    arr.push(s[i]);
-  }
+  result.push(reversePart)
+
+  let remainigPart = s.splice(0,k).join('')
+    result.push(remainigPart)
+
+    
+  
 }
 
-let res = str.reverse().concat(arr);
 
-console.log(res.join(""));
+
+console.log(result.join(''));
