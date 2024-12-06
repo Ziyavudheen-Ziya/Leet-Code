@@ -1,4 +1,4 @@
-let s = "tree";
+let s =  "Aabb"
 let obj = {};
 
 for (let i = 0; i < s.length; i++) {
@@ -8,6 +8,9 @@ for (let i = 0; i < s.length; i++) {
 let res = Object.entries(obj);
 
 res.sort((a, b) => b[1] - a[1]);
+
+console.log(res);
+
 let str = "";
 
 for (let i = 0; i < res.length; i++) {
