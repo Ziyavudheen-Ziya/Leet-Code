@@ -1,33 +1,23 @@
-let  a = "a", b = "aa"
+let a = "a",
+  b = "aa";
 
-let subString = ''
-let repeatTimes = 0
-while(subString.length<b.length){
+let subString = "";
+let repeatTimes = 0;
+while (subString.length < b.length) {
+  subString += a;
 
-    subString+=a
-    
-    repeatTimes++;
-
+  repeatTimes++;
 }
 
+if (subString.includes(b)) {
+  console.log(repeatTimes);
+} else {
+  subString += a;
+  repeatTimes++;
 
-if(subString.includes(b)){
-
+  if (subString.includes(b)) {
     console.log(repeatTimes);
-    
-}else{
-
-    subString+=a
-    repeatTimes++;
-
-    if(subString.includes(b)){
-
-        console.log(repeatTimes);
-        
-    }else{
-        console.log(-1);
-        
-    }
+  } else {
+    console.log(-1);
+  }
 }
-
-
