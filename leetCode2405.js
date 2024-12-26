@@ -18,5 +18,4 @@ if (sub.length > 0) {
   res.push(sub.join(""));
 }
 
-
 console.log(res.length);
