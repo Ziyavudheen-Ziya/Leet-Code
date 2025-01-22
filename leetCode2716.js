@@ -11,3 +11,7 @@ let key = Object.keys(obj)
 console.log(key.length);
 
 
+// Another option
+
+let rs = new Set(s).size
+console.log(rs);
