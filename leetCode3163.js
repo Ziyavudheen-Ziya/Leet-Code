@@ -1,31 +1,18 @@
 let word = "aaaaaaaaaaaaaabb"
 
 
-let subString = []
-
-let obj = {}
-
-for(let i=0;i<word.length;i++){
-
-     let count = 0
-
-     for(let j=0;j<word.length;j++){
-
-        if(word[i]===word[j]){
-            count++;
-            if(count>=9){
-
-                subString.push(`9${word[i]}`)
-            }else{
-
-                subString.push(`${count}${word[i]}`)
-            }
-        }
-     }
-     count = 0
+let compressed = "";
+let count = 1;
+for (let i = 1; i <= word.length; i++) {
+  if (word[i] === word[i - 1]) {
+    count++;
+  } else {
+    while (count > 9) {
+      compressed += "9" + word[i - 1];
+      count -= 9;
+    }
+    compressed += count + word[i - 1];
+    count = 1;
+  }
 }
-
-console.log(subString);
-
-
-
+console.log(compressed);
