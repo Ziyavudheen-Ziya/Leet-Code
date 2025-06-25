@@ -1,4 +1,13 @@
-let n = 70, logs = [[36,3],[1,5],[12,8],[25,9],[53,11],[29,12],[52,14]]
+let n = 70,
+  logs = [
+    [36, 3],
+    [1, 5],
+    [12, 8],
+    [25, 9],
+    [53, 11],
+    [29, 12],
+    [52, 14],
+  ];
 
 let checkTime = [];
 
@@ -11,24 +20,20 @@ for (let i = 0; i < logs.length; i++) {
     checkTime.push([id, Math.abs(leavingTime - logs[i - 1][1])]);
   }
 }
-checkTime[0][1] = logs[0][1]-0
+checkTime[0][1] = logs[0][1] - 0;
 
-let l = 0
-let employeeId = Infinity
-
+let l = 0;
+let employeeId = Infinity;
 
 console.log(checkTime);
 
-for(let i=0;i<checkTime.length;i++){
+for (let i = 0; i < checkTime.length; i++) {
+  let [id, time] = checkTime[i];
 
-    let [id,time] = checkTime[i]
-
-    if(time > l  || (time === l && id<employeeId)){
-
-         l = time
-         employeeId = id
-    }
-  
+  if (time > l || (time === l && id < employeeId)) {
+    l = time;
+    employeeId = id;
+  }
 }
 
 console.log(employeeId);
