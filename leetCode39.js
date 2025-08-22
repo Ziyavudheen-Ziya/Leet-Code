@@ -4,25 +4,34 @@ let candidates = [2, 3, 5],
 let res = [];
 
 function CombinationSum(arr, target) {
-  function backtrack(start, path, target) {
-    if (target === 0) {
-      res.push([...path]);
-      return true;
+  let newSet = new Set();
+  function backtrack(sum, sumOf) {
+    if (sumOf === target) {
+      let key = sum
+        .slice()
+        .sort((a, b) => a - b)
+        .join(",");
+
+      if (!newSet.has(key)) {
+        newSet.add(key);
+        res.push([...sum]);
+      }
+      return;
     }
 
-    if (target < 0) {
-      return false;
+    if (sumOf > target) {
+      return;
     }
 
-    for (let i = start; i < arr.length; i++) {
-      path.push(arr[i]);
+    for (let v of arr) {
+      sum.push(v);
 
-      backtrack(i, path, target - arr[i]);
-      path.pop();
+      backtrack(sum, sumOf + v);
+      sum.pop();
     }
   }
 
-  backtrack(0, [], target);
+  backtrack([], 0);
 }
 
 CombinationSum(candidates, target);
